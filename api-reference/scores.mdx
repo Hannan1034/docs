@@ -1,0 +1,58 @@
+---
+title: 'Get Position Scores'
+description: 'Retrieve interview scores for all candidates of a position'
+---
+
+## API Endpoint
+
+<span style={{
+  display: 'inline-flex',
+  alignItems: 'center',
+  backgroundColor: '#10B981',
+  color: 'white',
+  fontWeight: 'bold',
+  padding: '4px 8px',
+  borderRadius: '6px',
+  fontSize: '11px',
+  fontFamily: 'monospace',
+  marginRight: '8px'
+}}>GET</span> 
+https://internguysbackend.com/api-nora/get-scores
+
+### Query Parameters
+
+<ParamField body="apiKey" type="string" required>
+  Your API key for authentication
+</ParamField>
+
+<ParamField body="positionId" type="string" required>
+  The unique ID of the position for which you want to retrieve all candidate scores
+</ParamField>
+
+<RequestExample>
+```json Request
+{
+  "apiKey": "your_api_key",
+  "positionId": "123e4567-e89b-12d3-a456-426614174000"
+}
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "interviewScore": 87
+}
+```
+</ResponseExample>
+
+<ResponseExample>
+```json Response
+{
+  "status": "Error",
+  "message": "Candidate not found"
+}
+```
+</ResponseExample>

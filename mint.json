@@ -7,15 +7,9 @@
       "light": "#4D9CFF",
       "dark": "#0050B4"
     },
-    "topbarLinks": [
-      {
-        "name": "Documentation",
-        "url": "https://mintlify.com/docs" 
-      }
-    ],
     "topbarCtaButton": {
-      "name": "Dashboard",
-      "url": "https://dashboard.nora.ai"
+      "name": "Our Website",
+      "url": "https://recruiter.internguys.com/login"
     },
     "anchors": [
       {
@@ -24,17 +18,16 @@
         "url": "api-reference"
       },
       {
-        "name": "Help Center",
+        "name": "Contact Us",
         "icon": "question",
-        "url": "https://help.nora.ai"
+        "url": "mailto:contact@internguys.com"
       }
     ],
     "navigation": [
       {
         "group": "Getting Started",
         "pages": [
-          "introduction",
-          "quickstart"
+          "introduction"
         ]
       },
       {
@@ -44,12 +37,13 @@
           "api-reference/positions",
           "api-reference/candidates",
           "api-reference/interviews",
+          "api-reference/score",
           "api-reference/scores"
         ]
       }
     ],
     "footerSocials": {
-      "github": "https://github.com/nora-ai",
-      "linkedin": "https://linkedin.com/company/nora-ai"
+      "youtube": "https://www.youtube.com/@internguys",  
+      "linkedin": "https://www.linkedin.com/company/intern-guys"
     }
   }

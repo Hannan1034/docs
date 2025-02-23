@@ -1,0 +1,75 @@
+---
+title: 'Apply Candidate'
+description: 'Submit a candidate for a position'
+---
+
+## API Endpoint
+
+<span style={{
+  display: 'inline-flex',
+  alignItems: 'center',
+  backgroundColor: '#2563eb',
+  color: 'white',
+  fontWeight: 'bold',
+  padding: '4px 8px',
+  borderRadius: '6px',
+  fontSize: '11px',
+  fontFamily: 'monospace',
+  marginRight: '8px'
+}}>POST</span> 
+https://internguysbackend.com/api-nora/apply-candidate
+
+### Body Parameters
+
+<ParamField body="apiKey" type="string" required>
+  Your API key for authentication
+</ParamField>
+
+<ParamField body="positionId" type="string" required>
+  ID of the position the candidate is applying for
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  Candidate's full name
+</ParamField>
+
+<ParamField body="email" type="string" required>
+  Candidate's email address
+</ParamField>
+
+<ParamField body="location" type="string">
+  Candidate's location (can also be "Remote")
+</ParamField>
+
+<ParamField body="linkedin" type="string">
+  Candidate's LinkedIn profile URL
+</ParamField>
+
+<ParamField body="resume" type="file">
+  Candidate's resume file (PDF/Docx format)
+</ParamField>
+
+<RequestExample>
+```json Request
+{
+  "apiKey": "your_api_key",
+  "positionId": "123e4567-e89b-12d3-a456-426614174000",
+  "name": "John Doe",
+  "email": "john@example.com",
+  "location": "San Francisco, CA",
+  "linkedin": "https://linkedin.com/in/johndoe",
+  "resume": "resume.pdf"
+}
+```
+</RequestExample>
+
+<ResponseExample>
+```json Response
+{
+  "status": "Success",
+  "message": "Candidate applied successfully",
+  "candidateId": "987fcdeb-51a2-12d3-a456-426614174000",
+  "interviewLink": "https://www.internguys.com/interview/987fcdeb-51a2-12d3-a456-426614174000"
+}
+```
+</ResponseExample>

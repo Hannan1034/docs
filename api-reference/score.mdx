@@ -1,6 +1,6 @@
 ---
-title: 'Send Interview Link'
-description: 'Send an interview invitation with a candidate-specific interview link'
+title: 'Get Candidate Score'
+description: 'Retrieve a candidate’s interview score'
 ---
 
 ## API Endpoint
@@ -8,7 +8,7 @@ description: 'Send an interview invitation with a candidate-specific interview l
 <span style={{
   display: 'inline-flex',
   alignItems: 'center',
-  backgroundColor: '#2563eb',
+  backgroundColor: '#10B981',
   color: 'white',
   fontWeight: 'bold',
   padding: '4px 8px',
@@ -16,21 +16,18 @@ description: 'Send an interview invitation with a candidate-specific interview l
   fontSize: '11px',
   fontFamily: 'monospace',
   marginRight: '8px'
-}}>POST</span> 
-https://internguysbackend.com/api-nora/send-interview
+}}>GET</span> 
+https://internguysbackend.com/api-nora/get-score
 
-### Body Parameters
+### Query Parameters
 
 <ParamField body="apiKey" type="string" required>
   Your API key for authentication
 </ParamField>
 
 <ParamField body="candidateId" type="string" required>
-  The unique ID of the candidate to send the interview link
+  The unique ID of the candidate whose score you want to retrieve
 </ParamField>
-
-### Functionality
-This API sends an interview invitation email to the candidate with a unique interview link.
 
 <RequestExample>
 ```json Request
@@ -44,9 +41,18 @@ This API sends an interview invitation email to the candidate with a unique inte
 <ResponseExample>
 ```json Response
 {
-  "status": "Success",
-  "message": "Interview sent successfully",
-  "interviewLink": "https://www.internguys.com/interview/987fcdeb-51a2-12d3-a456-426614174000"
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "interviewScore": 87
+}
+```
+</ResponseExample>
+
+<ResponseExample>
+```json Response
+{
+  "status": "Error",
+  "message": "Candidate not found"
 }
 ```
 </ResponseExample>
