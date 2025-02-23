@@ -43,8 +43,12 @@ https://internguysbackend.com/api-nora/create-position
 <ParamField body="customInterviewScript" type="object" required>
   Customize the interview script to control Nora’s questions for candidates
   <Expandable title="How does it work?">
-    `Buckets` define dynamic question categories that adapt to candidate responses. Choose from:  
+    `Buckets` define dynamic question categories that adapt to candidate responses. 
+    
+    Choose from:  
+
     *Candidate's Relevant Experiences, In-depth Experience Questions, Role-specific Scenario Questions, Role-specific Technical Questions, and Cultural Fit Questions.*  
+
     `Questions` are fixed questions that Nora will ask exactly as provided.
   </Expandable>
 </ParamField>
@@ -59,7 +63,7 @@ https://internguysbackend.com/api-nora/create-position
   "apiKey": "your_api_key",
   "position": "Software Engineer",
   "location": "San Francisco, CA",
-  "type": "Full-time",
+  "type": "Full-Time",
   "jobDescription": "We are looking for a Software Engineer...",
   "customInterviewScript": {
     "Buckets": [
@@ -73,7 +77,7 @@ https://internguysbackend.com/api-nora/create-position
       "What makes you a good fit for this position?"
     ]
   },
-  "autoInterview": true
+  "autoInterview": false
 }
 ```
 </RequestExample>
