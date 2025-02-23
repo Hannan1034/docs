@@ -1,33 +1,36 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'Welcome to Nora AI APIs'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+# Welcome to Nora AI
 
-## Welcome
+Nora AI provides APIs for automating your interview process. Our APIs allow you to:
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+- Create positions with custom interview scripts
+- Process candidate applications
+- Send automated AI interviews
+- Review interview scores and results
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Getting Started
 
-## Authentication
+1. Get your API key from the Nora AI dashboard
+2. Make your first API call to create a position
+3. Start processing candidates
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+## Quick Links
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+<CardGroup>
+  <Card title="Authentication" icon="key" href="/api-reference/authentication">
+    Learn how to authenticate your API calls
+  </Card>
+  <Card title="Create Position" icon="plus" href="/api-reference/positions">
+    Create your first position
+  </Card>
+  <Card title="Process Candidates" icon="users" href="/api-reference/candidates">
+    Handle candidate applications
+  </Card>
+  <Card title="Interview Management" icon="video" href="/api-reference/interviews">
+    Manage interviews and scores
+  </Card>
+</CardGroup>

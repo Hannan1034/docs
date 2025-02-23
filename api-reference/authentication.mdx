@@ -1,0 +1,29 @@
+---
+title: 'Authentication'
+description: 'Learn how to authenticate with the Nora AI API'
+---
+
+# Authentication
+
+Nora AI uses API keys to authenticate all API requests. You can get your API key from the Nora AI Dashboard.
+
+## Getting Your API Key
+
+1. Log in to your [Nora AI Dashboard](https://dashboard.nora.ai)
+2. Go to Settings → API
+3. Click "Generate API Key"
+
+<Warning>
+Keep your API key secure and never share it publicly.
+</Warning>
+
+## Using Your API Key
+
+Include your API key in all API requests:
+
+### For POST Requests
+```json
+{
+  "apiKey": "your_api_key",
+  "otherParameters": "values"
+}

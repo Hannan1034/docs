@@ -1,0 +1,55 @@
+{
+    "name": "Nora AI",
+    "logo": "/small-logo.png",
+    "favicon": "/favicon.png",
+    "colors": {
+      "primary": "#0069ED",
+      "light": "#4D9CFF",
+      "dark": "#0050B4"
+    },
+    "topbarLinks": [
+      {
+        "name": "Documentation",
+        "url": "https://mintlify.com/docs" 
+      }
+    ],
+    "topbarCtaButton": {
+      "name": "Dashboard",
+      "url": "https://dashboard.nora.ai"
+    },
+    "anchors": [
+      {
+        "name": "API Reference",
+        "icon": "code",
+        "url": "api-reference"
+      },
+      {
+        "name": "Help Center",
+        "icon": "question",
+        "url": "https://help.nora.ai"
+      }
+    ],
+    "navigation": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "introduction",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "API Documentation",
+        "pages": [
+          "api-reference/authentication",
+          "api-reference/positions",
+          "api-reference/candidates",
+          "api-reference/interviews",
+          "api-reference/scores"
+        ]
+      }
+    ],
+    "footerSocials": {
+      "github": "https://github.com/nora-ai",
+      "linkedin": "https://linkedin.com/company/nora-ai"
+    }
+  }

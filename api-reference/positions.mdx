@@ -1,0 +1,141 @@
+---
+title: 'Create Position API'
+description: 'Create a new position with automated interview settings'
+---
+
+# Create Position
+
+Create a new position with custom interview settings and automated interview capabilities.
+
+## API Endpoint
+
+```bash
+POST https://api.nora.ai/create-position
+
+<CodeGroup>
+{
+  "apiKey": "your_api_key",
+  "position": "Software Engineer",
+  "location": "San Francisco, CA",
+  "type": "Full-time",
+  "jobDescription": "We are looking for a Software Engineer...",
+  "customInterviewScript": {
+    "buckets": [
+      {
+        "name": "Candidate's Relevant Experiences",
+        "prompt": "Ask about the candidate's background"
+      },
+      {
+        "name": "Technical Skills",
+        "prompt": "Assess coding abilities"
+      }
+    ]
+  },
+  "autoInterview": true
+}
+
+{
+  "status": "Success",
+  "message": "Position created successfully",
+  "positionId": "123e4567-e89b-12d3-a456-426614174000",
+  "jobLink": "https://www.internguys.com/job/123e4567-e89b-12d3-a456-426614174000/company/789"
+}
+
+{
+  "status": "Error",
+  "message": "Invalid or inactive API key"
+}
+
+</CodeGroup>
+
+Request Parameters
+<ParamField body="apiKey" type="string" required>
+  Your API key for authentication
+</ParamField>
+<ParamField body="position" type="string" required>
+  The title of the position
+</ParamField>
+<ParamField body="location" type="string" required>
+  Physical location of the position
+</ParamField>
+<ParamField body="type" type="string" required>
+  Type of position (e.g., "Full-time", "Part-time", "Contract")
+</ParamField>
+<ParamField body="jobDescription" type="string" required>
+  Detailed description of the position
+</ParamField>
+<ParamField body="customInterviewScript" type="object" required>
+  Interview script configuration with question buckets
+</ParamField>
+<ParamField body="autoInterview" type="boolean">
+  Whether to automatically send interviews to candidates (defaults to false)
+</ParamField>
+
+Interview Script Buckets
+Available bucket types:
+
+"Candidate's Relevant Experiences"
+"In-depth Experience Questions"
+"Role-specific Scenario Questions"
+"Role-specific Technical Questions"
+"Cultural Fit Questions"
+
+Response
+The API returns:
+
+status: "Success" or "Error"
+message: Description of the result
+positionId: Unique identifier for the created position
+jobLink: URL where candidates can apply
+
+Status Codes
+<ResponseField name="200">
+  Position created successfully
+</ResponseField>
+<ResponseField name="400">
+  Invalid request parameters or missing required fields
+</ResponseField>
+<ResponseField name="401">
+  Invalid or missing API key
+</ResponseField>
+<ResponseField name="500">
+  Server error while creating position
+</ResponseField>
+
+Error Messages
+Common error messages include:
+
+"Security token is required"
+"Invalid or inactive security token"
+"GeneratedScript is required"
+"An error occurred while creating the position"
+
+Example Implementation
+
+async function createPosition() {
+  const response = await fetch('https://api.nora.ai/create-position', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      apiKey: 'your_api_key',
+      position: 'Software Engineer',
+      location: 'San Francisco, CA',
+      type: 'Full-time',
+      jobDescription: 'Job description here...',
+      customInterviewScript: {
+        buckets: [
+          {
+            name: "Candidate's Relevant Experiences",
+            prompt: "Tell me about your background"
+          }
+        ]
+      },
+      autoInterview: true
+    })
+  });
+  
+  const data = await response.json();
+  return data;
+}
